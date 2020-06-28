@@ -1,0 +1,14 @@
+<html>
+    <head>
+    </head>
+    <body>
+        {% for workout in workouts %}
+            {{workout.muscle_name}}
+            {{workout.workout_name}}
+            {{workout.workout_notes}}
+            {{workout.sets}}
+            {{workout.reps}}
+            {{workout.workout_date}}
+        {% endfor %}
+    </body>
+</html>
