@@ -1,14 +1,22 @@
-<html>
-    <head>
-    </head>
-    <body>
-        {% for workout in workouts %}
-            {{workout.muscle_name}}
-            {{workout.workout_name}}
+{% extends 'base.html' %}
+{% block outercontent %}
+    
+
+<ul class="collapsible popout">
+    {% for workout in workouts %} 
+    <li>
+      <div class="collapsible-header">
+
+        <div class=" task_header col s9">
+            <i class="material-icons">fitness_center</i><strong>{{workout.muscle_name}}</strong> - {{workout.workout_date}}
+        </div>
+      </div> 
+      <div class="collapsible-body">
+        <span>
             {{workout.workout_notes}}
-            {{workout.sets}}
-            {{workout.reps}}
-            {{workout.workout_date}}
-        {% endfor %}
-    </body>
-</html>
+        </span>
+      </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
