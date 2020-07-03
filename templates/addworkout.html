@@ -1,4 +1,48 @@
 {% extends 'base.html' %}
 {% block outercontent %}
 
+<h3>Add a workout</h3>
+  <div class="row">
+    <form action="" method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="workout_name" name="workout_name" type="text" class="validate">
+          <label for="icon_prefix">Workout Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <textarea name="workout_notes" id="workout_notes" class="materialize-textarea"></textarea>
+          <label for="icon_telephone">Workout Notes</label>
+        </div>
+      </div>
+      <div class="row">
+
+      </div>
+      <div class="row">
+        <div class="input-field inline col s1">
+            <i class="material-icons prefix">phone</i>
+            <input id="sets" name="sets" type="text" class="validate">
+            <label for="icon_prefix">Sets</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field inline col s1">
+            <i class="material-icons prefix">phone</i>
+            <input id="reps" name="reps" type="text" class="validate">
+            <label for="icon_prefix">Reps</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6" id="matfix">
+          <i class="material-icons prefix">today</i>
+          <input id="workout_date" name="workout_date" type="text" class="datepicker">
+          <label for="icon_prefix">Date this was done</label>
+        </div>
+      </div>
+    </form>
+  
+
 {% endblock %}

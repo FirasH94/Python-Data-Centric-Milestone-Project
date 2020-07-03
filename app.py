@@ -18,6 +18,9 @@ mongo = PyMongo(app)
 def get_workouts():
     return render_template('workouts.html', workouts=mongo.db.workouts.find())
 
+@app.route('/add_workout')
+def add_workout():
+        return render_template('addworkout.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
