@@ -20,7 +20,8 @@ def get_workouts():
 
 @app.route('/add_workout')
 def add_workout():
-        return render_template('addworkout.html')
+        return render_template('addworkout.html', 
+        categories=mongo.db.MuscleCategory.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
