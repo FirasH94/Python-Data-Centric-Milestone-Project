@@ -23,6 +23,13 @@ def add_workout():
         return render_template('addworkout.html', 
         categories=mongo.db.MuscleCategory.find())
 
+@app.route('/insert_workout', methods=['POST'])
+def insert_workout():
+    workouts = mongo.db.workouts
+    workouts.insert_one(request.form.to_dict())
+    return redirect(url_for('get_workouts'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
