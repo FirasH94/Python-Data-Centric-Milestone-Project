@@ -1,15 +1,19 @@
 {% extends 'base.html' %} {% block outercontent %}
 
-<h3>Add a workout</h3>
+<h3>Edit your workout</h3>
 <div class="row">
-  <form action="{{ url_for('insert_workout') }}" method="POST" class="col s12">
+  <form action="{{ url_for('update_workout', workout_id=workout._id) }}" method="POST" class="col s12">
     <div class="row">
       <div class="input-field col s6 m6">
         <i class="material-icons prefix">check</i>
         <select multiple class="icons" id="category" name="category_name">
           <option value="" disabled selected>Pick your muscle group</option>
           {% for cat in categories %}
-          <option value="{{cat.muscle_name}}">{{cat.muscle_name}}</option>
+            {% if cat.category_name == workout.category_name %}
+          <option value="{{cat.muscle_name}}" selected >{{cat.muscle_name}}</option>
+            {% else %}
+            <option value="{{cat.muscle_name}}">{{cat.muscle_name}}</option>
+            {% endif %}
           {% endfor %}
         </select>
         <label>Workout Category</label>
@@ -18,23 +22,14 @@
     <div class="row">
       <div class="input-field col s6">
         <i class="material-icons prefix">assignment</i>
-        <input
-          id="workout_name"
-          name="workout_name"
-          type="text"
-          class="validate"
-        />
+        <input id="workout_name" name="workout_name" type="text" class="validate" value="{{workout.workout_name}}"/>
         <label for="workout_name">Workout Name</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s6">
         <i class="material-icons prefix">subject</i>
-        <textarea
-          name="workout_notes"
-          id="workout_notes"
-          class="materialize-textarea"
-        ></textarea>
+        <textarea name="workout_notes" id="workout_notes" class="materialize-textarea" >{{workout.workout_notes}}</textarea>
         <label for="workout_notes">Workout Notes</label>
       </div>
     </div>
@@ -42,37 +37,45 @@
     <div class="row">
       <div class="input-field inline col s1">
         <i class="material-icons prefix">filter_1</i>
-        <input id="sets" name="sets" type="text" class="validate" />
+        <input id="sets" name="sets" type="text" class="validate" value="{{workout.sets}}"/>
         <label for="sets">Sets</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field inline col s1">
         <i class="material-icons prefix">filter_2</i>
-        <input id="reps" name="reps" type="text" class="validate" />
+        <input id="reps" name="reps" type="text" class="validate" value="{{workout.reps}}"/>
         <label for="reps">Reps</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field inline col s1">
         <i class="material-icons prefix">filter_3</i>
-        <input id="pr_weight" name="pr_weight" type="text" class="validate" />
+        <input id="pr_weight" name="pr_weight" type="text" class="validate" value="{{workout.pr_weight}}"/>
         <label for="pr_weight">PR</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s6" id="matfix">
         <i class="material-icons prefix">today</i>
-        <input  id="workout_date"  name="workout_date" type="text" class="datepicker" />
+        <input id="workout_date"  name="workout_date" type="text"  class="datepicker" />
         <label for="icon_prefix">Date this was done</label>
       </div>
     </div>
     <div class="row">
-      <button class="btn waves-effect waves-light" type="submit" name="action">Add Workout
-        <i class="material-icons right">plus_one</i>
+      <button class="btn waves-effect waves-light" type="submit" name="action"> Edit Workout
+      <i class="material-icons right">plus_one</i>
       </button>
     </div>
   </form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        workout_date = Date.parse('{{workout.workout_date}}');
+        $('#workout_date').pickadate('picker').set('select', workout_date, { format: 'dd/mm/yyyy'}).trigger('change')
+    });
+</script>
 
   {% endblock %}
 </div>

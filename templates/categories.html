@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block outercontent %}
+
+<div class="row">
+
+<h3>Workout Categories</h3>
+<ul class="collapsible popout">
+  {% for category in categories %}
+  <li>
+    <div class="collapsible-header">
+        <a  class="waves-effect waves-light btn btn_category red"><i class="material-icons left icon">check_circle_outline</i>Remove</a>
+        <a  class="waves-effect waves-light btn btn_small grey"><i class="material-icons left icon">create</i>Edit</a>
+      <div class="workout_header col s9">
+        <strong>{{category.muscle_name}}</strong>
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+</div>
+{% endblock %}

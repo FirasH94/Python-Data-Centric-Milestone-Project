@@ -1,0 +1,24 @@
+.btn_small {
+    height: 35px !important;
+    width: 100px !important;
+    line-height: 24 px !important;
+    margin: 5px 5px 5px 2px !important;
+    padding: 0 0.5em 0 0.1em !important;
+}
+
+.btn_category {
+    height: 35px !important;
+    width: 120px !important;
+    line-height: 24 px !important;
+    margin: 5px 5px 5px 2px !important;
+    padding: 0 0.5em 0 0.1em !important;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.workout_header {
+    margin-top: 15px;
+}
