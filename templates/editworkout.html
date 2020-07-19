@@ -6,10 +6,10 @@
     <div class="row">
       <div class="input-field col s6 m6">
         <i class="material-icons prefix">check</i>
-        <select multiple class="icons" id="category" name="category_name">
+        <select multiple class="icons" id="category" name="muscle_name">
           <option value="" disabled selected>Pick your muscle group</option>
           {% for cat in categories %}
-            {% if cat.category_name == workout.category_name %}
+            {% if cat.muscle_name == workout.muscle_name %}
           <option value="{{cat.muscle_name}}" selected >{{cat.muscle_name}}</option>
             {% else %}
             <option value="{{cat.muscle_name}}">{{cat.muscle_name}}</option>
