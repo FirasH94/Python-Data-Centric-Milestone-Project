@@ -4,6 +4,7 @@
     line-height: 24 px !important;
     margin: 5px 5px 5px 2px !important;
     padding: 0 0.5em 0 0.1em !important;
+    float: right !important;
 }
 
 .btn_category {
@@ -21,4 +22,32 @@
 
 .workout_header {
     margin-top: 15px;
+}
+
+.icon-main {
+    padding-top: 10px !important;
+}
+
+.li-spacing {
+    margin-bottom: 20px !important;
+}
+
+.btn-cancel {
+    background-color: red;
+    width: 120px !important;
+}
+
+.btn-cancel:hover {
+    background-color: white;
+    color: red;
+}
+
+.btn-save {
+    background-color: green;
+    width: 120px !important;
+}
+
+.btn-save:hover {
+    background-color: white;
+    color: green;
 }
