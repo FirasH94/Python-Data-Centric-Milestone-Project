@@ -7,11 +7,23 @@
   {% for category in categories %}
   <li>
     <div class="collapsible-header">
-        <a  href="{{url_for('delete_category', category_id=category._id)}}" class="waves-effect waves-light btn btn_category red"><i class="material-icons left icon">check_circle_outline</i>Remove</a>
-        <a href="{{url_for('edit_category' , category_id=category._id)}}" class="waves-effect waves-light btn btn_small grey"><i class="material-icons left icon">create</i>Edit</a>
       <div class="workout_header col s9">
         <strong>{{category.muscle_name}}</strong>
       </div>
+     <div class="button-field">
+  <a class="waves-effect waves-light btn btn_category red modal-trigger button-right" href="#modal2"><i class="material-icons left icon">remove_circle_outline</i>Remove</a>
+  <!-- Modal Structure -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>Are you sure you want to completely remove this category?</h4>
+    </div>
+    <div class="modal-footer">
+      <a href="{{url_for('delete_category', category_id=category._id)}}" class="waves-effect waves-light btn btn_small red">Yes</a>
+      <a href="#!" class="modal-close waves-effect waves-light btn btn_small green">No</a>
+    </div>
+  </div>
+        <a href="{{url_for('edit_category' , category_id=category._id)}}" class="waves-effect waves-light btn btn_small grey button-right"><i class="material-icons left icon">create</i>Edit</a>
+</div> 
     </div>
   </li>
   {% endfor %}
@@ -19,7 +31,7 @@
 </div>
 
 <div class="row">
-    <a href="{{url_for('add_category')}}" class="waves-effect waves-light btn">
+    <a href="{{url_for('add_category')}}" class="waves-effect waves-light btn green">
         <i class="material-icons right">playlist_add</i>Add Category
     </a>
 </div>

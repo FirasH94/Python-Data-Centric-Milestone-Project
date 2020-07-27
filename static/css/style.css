@@ -22,6 +22,7 @@
 
 .workout_header {
     margin-top: 15px;
+    width: -webkit-fill-available !important;
 }
 
 .icon-main {
@@ -50,4 +51,24 @@
 .btn-save:hover {
     background-color: white;
     color: green;
+}
+
+.button-field {
+    width: 100% !important;
+    float: right !important;
+}
+
+.button-right {
+float: right !important;
+}
+
+.title {
+    font-size: 2rem !important;
+    margin-left: 20px !important;
+}
+
+@media only screen and (max-width: 600px) {
+ .title {
+    font-size: 1.5rem !important;
+}
 }

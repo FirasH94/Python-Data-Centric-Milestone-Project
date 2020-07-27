@@ -11,7 +11,18 @@
         <strong>{{workout.workout_name}}</strong> - {{workout.workout_date}}
       </div>
       <div class="button-field">
-              <a href="{{url_for('delete_workout' , workout_id=workout._id)}}" class="waves-effect waves-light btn btn_small green"><i class="material-icons left icon">check_circle_outline</i>Done</a>
+      <a class="waves-effect waves-light btn btn_small green modal-trigger" href="#modal1"><i class="material-icons left icon">check_circle_outline</i>Done</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Are you sure you want to mark the workout as done?</h4>
+    </div>
+    <div class="modal-footer">
+      <a href="{{url_for('delete_workout' , workout_id=workout._id)}}" class="waves-effect waves-light btn btn_small green">Yes</a>
+      <a href="#!" class="modal-close waves-effect waves-light btn btn_small red">No</a>
+    </div>
+  </div>
         <a href="{{url_for('edit_workout' , workout_id=workout._id)}}" class="waves-effect waves-light btn btn_small grey"><i class="material-icons left icon">create</i>Edit</a>
       </div>
     </div>

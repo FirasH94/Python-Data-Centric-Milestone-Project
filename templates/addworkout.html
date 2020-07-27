@@ -4,7 +4,7 @@
 <div class="row">
   <form action="{{ url_for('insert_workout') }}" method="POST" class="col s12">
     <div class="row">
-      <div class="input-field col s6 m6">
+      <div class="input-field col xs12 s12 m6">
         <i class="material-icons prefix">check</i>
         <select multiple class="icons" id="category" name="muscle_name">
           <option value="" disabled selected>Pick your muscle group</option>
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="input-field col s6">
+      <div class="input-field col xs12 s12 m6">
         <i class="material-icons prefix">assignment</i>
         <input
           id="workout_name"
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="input-field col s6">
+      <div class="input-field col xs12 s12 m6">
         <i class="material-icons prefix">subject</i>
         <textarea
           name="workout_notes"
@@ -40,39 +40,38 @@
     </div>
     <div class="row"></div>
     <div class="row">
-      <div class="input-field inline col s1">
+      <div class="input-field inline col xs6 s6 m1">
         <i class="material-icons prefix">filter_1</i>
         <input id="sets" name="sets" type="text" class="validate" />
         <label for="sets">Sets</label>
       </div>
     </div>
     <div class="row">
-      <div class="input-field inline col s1">
+      <div class="input-field inline col xs6 s6 m1">
         <i class="material-icons prefix">filter_2</i>
         <input id="reps" name="reps" type="text" class="validate" />
         <label for="reps">Reps</label>
       </div>
     </div>
     <div class="row">
-      <div class="input-field inline col s1">
+      <div class="input-field inline col xs6 s6 m1">
         <i class="material-icons prefix">filter_3</i>
         <input id="pr_weight" name="pr_weight" type="text" class="validate" />
         <label for="pr_weight">PR</label>
       </div>
     </div>
     <div class="row">
-      <div class="input-field col s6" id="matfix">
+      <div class="input-field col xs12 s12 m6" id="matfix">
         <i class="material-icons prefix">today</i>
         <input  id="workout_date"  name="workout_date" type="text" class="datepicker" />
         <label for="icon_prefix">Date this was done</label>
       </div>
     </div>
     <div class="row">
-      <button class="btn waves-effect waves-light" type="submit" name="action">Add Workout
+      <button class="btn waves-effect waves-light green" type="submit" name="action">Add Workout
         <i class="material-icons right">plus_one</i>
       </button>
     </div>
   </form>
-
   {% endblock %}
 </div>
