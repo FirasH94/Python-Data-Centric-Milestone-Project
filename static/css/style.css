@@ -1,15 +1,16 @@
 .btn_small {
-    height: 35px !important;
-    width: 100px !important;
+    height: 32px !important;
+    width: 32px !important;
     line-height: 24 px !important;
     margin: 5px 5px 5px 2px !important;
     padding: 0 0.5em 0 0.1em !important;
     float: right !important;
 }
 
+
 .btn_category {
-    height: 35px !important;
-    width: 120px !important;
+    height: 32px !important;
+    width: 32px !important;
     line-height: 24 px !important;
     margin: 5px 5px 5px 2px !important;
     padding: 0 0.5em 0 0.1em !important;
@@ -53,6 +54,7 @@
     color: green;
 }
 
+
 .button-field {
     width: 100% !important;
     float: right !important;
@@ -66,6 +68,8 @@ float: right !important;
     font-size: 2rem !important;
     margin-left: 20px !important;
 }
+
+/*  title size change when viewed on smaller screens such as mobile */
 
 @media only screen and (max-width: 600px) {
  .title {

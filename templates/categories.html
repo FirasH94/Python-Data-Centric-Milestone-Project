@@ -4,6 +4,7 @@
 
 <h3>Workout Categories</h3>
 <ul class="collapsible popout">
+<!-- for loop to display all vailable categories from Mongo DB -->
   {% for category in categories %}
   <li>
     <div class="collapsible-header">
@@ -11,7 +12,7 @@
         <strong>{{category.muscle_name}}</strong>
       </div>
      <div class="button-field">
-  <a class="waves-effect waves-light btn btn_category red modal-trigger button-right" href="#modal2"><i class="material-icons left icon">remove_circle_outline</i>Remove</a>
+  <a class="waves-effect waves-light btn btn_category red modal-trigger button-right" href="#modal2"><i class="material-icons left icon">remove_circle_outline</i></a>
   <!-- Modal Structure -->
   <div id="modal2" class="modal">
     <div class="modal-content">
