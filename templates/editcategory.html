@@ -1,22 +1,20 @@
 {% extends 'base.html' %} {% block outercontent %}
-
 <h3>Update Workout Category</h3>
 <!-- Update category form -->
 <div class="row">
-  <form action="{{ url_for('update_category', category_id=category._id) }}" method="POST" class="col s12">
-    <div class="row">
-        <div class="input-field col s6">
-        <i class="material-icons prefix">poll</i>
-        <input id="muscle_name" name="muscle_name" type="text" class="validate" value="{{category.muscle_name}}"/>
-        <label for="muscle_name">Category Name</label>
-    </div>
-    </div>
-    <div class="row">
-      <button class="btn waves-effect btn-save" type="submit" name="action"> Save
-      </button>
-      <a href="{{url_for('get_categories')}}" class="btn btn-cancel">Cancel</a>
-    </div>
-  </form>
-
-  {% endblock %}
+   <form action="{{ url_for('update_category', category_id=category._id) }}" method="POST" class="col s12">
+      <div class="row">
+         <div class="input-field col s6">
+            <i class="material-icons prefix">poll</i>
+            <input id="muscle_name" name="muscle_name" type="text" class="validate" value="{{category.muscle_name}}"/>
+            <label for="muscle_name">Category Name</label>
+         </div>
+      </div>
+      <div class="row">
+         <button class="btn waves-effect btn-save" type="submit" name="action"> Save
+         </button>
+         <a href="{{url_for('get_categories')}}" class="btn btn-cancel">Cancel</a>
+      </div>
+   </form>
+   {% endblock %}
 </div>

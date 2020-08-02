@@ -1,79 +1,78 @@
 {% extends 'base.html' %} {% block outercontent %}
-
 <h3>Add a workout</h3>
 <div class="row">
- <!-- form for the user to fill in when adding a new workout -->
-  <form action="{{ url_for('insert_workout') }}" method="POST" class="col s12">
-    <div class="row">
-      <div class="input-field col xs12 s12 m6">
-        <i class="material-icons prefix">check</i>
-        <select multiple class="icons" id="category" name="muscle_name">
-          <option value="" disabled selected>Pick your muscle group</option>
-           <!-- for loop for Retrieving all available categories from mongo DB -->
-          {% for cat in categories %}
-          <option value="{{cat.muscle_name}}">{{cat.muscle_name}}</option>
-          {% endfor %}
-        </select>
-        <label>Workout Category</label>
+   <!-- form for the user to fill in when adding a new workout -->
+   <form action="{{ url_for('insert_workout') }}" method="POST" class="col s12">
+      <div class="row">
+         <div class="input-field col xs12 s12 m6">
+            <i class="material-icons prefix">check</i>
+            <select multiple class="icons" id="category" name="muscle_name">
+               <option value="" disabled selected>Pick your muscle group</option>
+               <!-- for loop for Retrieving all available categories from mongo DB -->
+               {% for cat in categories %}
+               <option value="{{cat.muscle_name}}">{{cat.muscle_name}}</option>
+               {% endfor %}
+            </select>
+            <label>Workout Category</label>
+         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col xs12 s12 m6">
-        <i class="material-icons prefix">assignment</i>
-        <input
-          id="workout_name"
-          name="workout_name"
-          type="text"
-          class="validate"
-        />
-        <label for="workout_name">Workout Name</label>
+      <div class="row">
+         <div class="input-field col xs12 s12 m6">
+            <i class="material-icons prefix">assignment</i>
+            <input
+               id="workout_name"
+               name="workout_name"
+               type="text"
+               class="validate"
+               />
+            <label for="workout_name">Workout Name</label>
+         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col xs12 s12 m6">
-        <i class="material-icons prefix">subject</i>
-        <textarea
-          name="workout_notes"
-          id="workout_notes"
-          class="materialize-textarea"
-        ></textarea>
-        <label for="workout_notes">Workout Notes</label>
+      <div class="row">
+         <div class="input-field col xs12 s12 m6">
+            <i class="material-icons prefix">subject</i>
+            <textarea
+               name="workout_notes"
+               id="workout_notes"
+               class="materialize-textarea"
+               ></textarea>
+            <label for="workout_notes">Workout Notes</label>
+         </div>
       </div>
-    </div>
-    <div class="row"></div>
-    <div class="row">
-      <div class="input-field inline col xs6 s6 m2">
-        <i class="material-icons prefix">filter_1</i>
-        <input id="sets" name="sets" type="number" class="validate" />
-        <label for="sets">Sets</label>
+      <div class="row"></div>
+      <div class="row">
+         <div class="input-field inline col xs6 s6 m2">
+            <i class="material-icons prefix">filter_1</i>
+            <input id="sets" name="sets" type="number" class="validate" />
+            <label for="sets">Sets</label>
+         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field inline col xs6 s6 m2">
-        <i class="material-icons prefix">filter_2</i>
-        <input id="reps" name="reps" type="number" class="validate" />
-        <label for="reps">Reps</label>
+      <div class="row">
+         <div class="input-field inline col xs6 s6 m2">
+            <i class="material-icons prefix">filter_2</i>
+            <input id="reps" name="reps" type="number" class="validate" />
+            <label for="reps">Reps</label>
+         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field inline col xs6 s6 m2">
-        <i class="material-icons prefix">filter_3</i>
-        <input id="pr_weight" name="pr_weight" type="text" class="validate" />
-        <label for="pr_weight">PR</label>
+      <div class="row">
+         <div class="input-field inline col xs6 s6 m2">
+            <i class="material-icons prefix">filter_3</i>
+            <input id="pr_weight" name="pr_weight" type="text" class="validate" />
+            <label for="pr_weight">PR</label>
+         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col xs12 s12 m6" id="matfix">
-        <i class="material-icons prefix">today</i>
-        <input  id="workout_date"  name="workout_date" type="text" class="datepicker" />
-        <label for="icon_prefix">Date to do this on</label>
+      <div class="row">
+         <div class="input-field col xs12 s12 m6" id="matfix">
+            <i class="material-icons prefix">today</i>
+            <input  id="workout_date"  name="workout_date" type="text" class="datepicker" />
+            <label for="icon_prefix">Date to do this on</label>
+         </div>
       </div>
-    </div>
-    <div class="row">
-      <button class="btn waves-effect waves-light green" type="submit" name="action">Add Workout
-        <i class="material-icons right">plus_one</i>
-      </button>
-    </div>
-  </form>
-  {% endblock %}
+      <div class="row">
+         <button class="btn waves-effect waves-light green" type="submit" name="action">Add Workout
+         <i class="material-icons right">plus_one</i>
+         </button>
+      </div>
+   </form>
+   {% endblock %}
 </div>
