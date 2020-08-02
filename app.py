@@ -16,6 +16,9 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_workouts')
 def get_workouts():
+    workouts = mongo.db.workouts.find()
+    for i in workouts:
+        print(i)
     return render_template('workouts.html', workouts=mongo.db.workouts.find())
 
 # Add workout function
